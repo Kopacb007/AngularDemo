@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-xs-12">
+        <h1>Add item to list</h1>
+        <form name="itemsForm">
+            <p><b>Dirty:</b>{{itemsForm.$dirty}}</p>
+            <p><b>Pristine:</b>{{itemsForm.$pristine}}</p>
+            <p><b>Valid:</b>{{itemsForm.$valid}}</p>
+            <div class="form-group">
+                <input type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="Item" ng-model="newItem.itemName" required>
+            </div>
+
+            <div class="alert alert-danger" role="alert" ng-show="itemsForm.$dirty && !itemsForm.$valid">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                Enter a valid item!
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-success btn-lg btn-block" type="button" ng-click="itemsForm.$valid && save()">
+                    <span class="glyphicon glyphicon-pushpin"></span>
+                    Save
+                </button>
+            </div>
+
+            <div class="form-group">
+                <a href="#itemlist" class="btn btn-default btn-lg btn-block">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Cancel
+                </a>
+            </div>
+        </form>
+</div>
+</div>

@@ -1,0 +1,16 @@
+<hr>
+
+<div class="container">
+    <div class="col-xs-12">
+        <a href="#itemlist/add" class="btn btn-primary btn-lg btn-block">Add new item</a>
+        <ul class="list-group">
+            <li ng-repeat="item in groceryItems | orderBy: '-data'" class="list-group-item text-center">
+
+                <ko-item></ko-item>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<hr>
